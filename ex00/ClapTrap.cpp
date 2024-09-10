@@ -6,7 +6,7 @@
 /*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 15:12:26 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/09/10 18:03:16 by gdaignea         ###   ########.fr       */
+/*   Updated: 2024/09/10 18:08:35 by gdaignea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 	_energyPoints--;
 	for (unsigned int i = 0; i < amount && i < 10; i++)
 		_hitPoints++;
-	std::cout << "ClapTrap " << _name << "repairs himself of " << amount << " hit points. It feels way better !" << std::endl;
+	std::cout << "ClapTrap " << _name << " repairs himself of " << amount << " hit points. It feels way better !" << std::endl;
 }
 
 void	ClapTrap::setAttackDamage(unsigned int attack) {
