@@ -6,7 +6,7 @@
 /*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 15:03:37 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/09/11 15:08:43 by gdaignea         ###   ########.fr       */
+/*   Updated: 2024/09/11 15:06:20 by gdaignea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class ClapTrap {
 
 	ClapTrap(std::string name);
 	ClapTrap(ClapTrap const & ClapCopy);
-	~ClapTrap();
+	virtual ~ClapTrap();
 
 	ClapTrap&	operator=(ClapTrap const & rhs);
 
@@ -37,10 +37,11 @@ class ClapTrap {
 
 	protected:
 
-	std::string	_name;
-	int			_hitPoints;
-	int			_energyPoints;
-	int			_attackDamage;
+	std::string		_name;
+	int				_hitPoints;
+	unsigned int	_maxHitPoints;
+	int				_energyPoints;
+	int				_attackDamage;
 
 };
 
