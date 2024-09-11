@@ -6,7 +6,7 @@
 /*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 15:12:26 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/09/11 15:47:21 by gdaignea         ###   ########.fr       */
+/*   Updated: 2024/09/11 16:08:12 by gdaignea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 ClapTrap::ClapTrap(std::string name): _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
 	_maxHitPoints = 10;
-	std::cout << "ClapTrap constructor called" << std::endl;
+	std::cout << "ClapTrap " << _name << " constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "ClapTrap destructor called" << std::endl;
+	std::cout << "ClapTrap " << _name << " destructor called" << std::endl;
 }
 
 void	ClapTrap::attack(const std::string &target) {

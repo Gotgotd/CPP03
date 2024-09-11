@@ -6,7 +6,7 @@
 /*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 15:03:37 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/09/11 15:08:43 by gdaignea         ###   ########.fr       */
+/*   Updated: 2024/09/11 15:37:43 by gdaignea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ class ClapTrap {
 	public:
 
 	ClapTrap(std::string name);
-	ClapTrap(ClapTrap const & ClapCopy);
 	~ClapTrap();
-
-	ClapTrap&	operator=(ClapTrap const & rhs);
 
 	void	attack(const std::string& target);
 	void	takeDamage(unsigned int amount);
