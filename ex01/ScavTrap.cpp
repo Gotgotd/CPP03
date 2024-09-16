@@ -6,11 +6,15 @@
 /*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 10:40:29 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/09/11 15:05:21 by gdaignea         ###   ########.fr       */
+/*   Updated: 2024/09/12 15:25:23 by gdaignea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap(): ClapTrap() {
+	std::cout << "ScavTrap constructor called" << std::endl;
+}
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name) {
 
@@ -18,14 +22,25 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name) {
 	_energyPoints = 50;
 	_attackDamage = 20;
 	_maxHitPoints = 100;
-	std::cout << "ScavTrap constructor called" << std::endl;
+	std::cout << "ScavTrap " << _name << " constructor called" << std::endl;
+}
+
+ScavTrap::ScavTrap(ScavTrap const & copy): ClapTrap(copy) {
+	*this=copy;
 }
 
 ScavTrap::~ScavTrap() {
 
-	std::cout << "ScavTrap destructor called" << std::endl;
+	std::cout << "ScavTrap " << _name << " destructor called" << std::endl;
 }
 
+ScavTrap&	ScavTrap::operator=(ScavTrap const & rhs) {
+
+	if (this != &rhs) {
+		ClapTrap::operator=(rhs);
+	}
+	return *this;
+}
 void	ScavTrap::guardGate() {
 
 	if (_hitPoints <= 0) {

@@ -6,13 +6,13 @@
 /*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 10:14:41 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/09/12 15:23:53 by gdaignea         ###   ########.fr       */
+/*   Updated: 2024/09/12 15:09:36 by gdaignea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : public virtual ClapTrap {
 
 	public:
 

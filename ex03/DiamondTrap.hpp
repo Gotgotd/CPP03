@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 15:03:37 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/09/12 15:19:27 by gdaignea         ###   ########.fr       */
+/*   Created: 2024/09/12 11:47:53 by gdaignea          #+#    #+#             */
+/*   Updated: 2024/09/16 11:37:34 by gdaignea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-# include <iostream>
-# include <string>
-
-class ClapTrap {
+class DiamondTrap : public FragTrap, public ScavTrap {
 
 	public:
 
-	ClapTrap();
-	ClapTrap(std::string name);
-	ClapTrap(ClapTrap const & clapCopy);
-	virtual ~ClapTrap();
+	DiamondTrap();
+	DiamondTrap(std::string name);
+	DiamondTrap(DiamondTrap const & copy);
+	virtual ~DiamondTrap();
 
-	ClapTrap&	operator=(ClapTrap const & rhs);
+	DiamondTrap&	operator=(DiamondTrap const & rhs);
 
+	void	whoAmI();
 	void	attack(const std::string& target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
 
-	void			setAttackDamage(unsigned int attack);
-	unsigned int	getHitPoints() const;
+	unsigned int	getAttackDamage() const;
 	unsigned int	getEnergyPoints() const;
-	std::string		getName() const;
+	unsigned int	getHitPoints() const;
 
 	protected:
 
@@ -42,8 +38,4 @@ class ClapTrap {
 	int			_hitPoints;
 	int			_energyPoints;
 	int			_attackDamage;
-
 };
-
-
-#endif

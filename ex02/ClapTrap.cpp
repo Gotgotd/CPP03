@@ -6,19 +6,40 @@
 /*   By: gdaignea <gdaignea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 15:12:26 by gdaignea          #+#    #+#             */
-/*   Updated: 2024/09/11 16:08:12 by gdaignea         ###   ########.fr       */
+/*   Updated: 2024/09/12 15:22:04 by gdaignea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap(): _hitPoints(10), _energyPoints(10), _attackDamage(0) {
+	std::cout << "ClapTrap constructor called" << std::endl;
+}
 
 ClapTrap::ClapTrap(std::string name): _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
 	_maxHitPoints = 10;
 	std::cout << "ClapTrap " << _name << " constructor called" << std::endl;
 }
 
+ClapTrap::ClapTrap(ClapTrap const & copy) {
+	std::cout << "ClapTrap copy constructor called" << std::endl;
+	*this=copy;
+}
+
 ClapTrap::~ClapTrap() {
 	std::cout << "ClapTrap " << _name << " destructor called" << std::endl;
+}
+
+ClapTrap&	ClapTrap::operator=(ClapTrap const & rhs) {
+	
+	if (this != &rhs)
+	{
+		_name = rhs._name;
+		_hitPoints = rhs._hitPoints;
+		_energyPoints = rhs._energyPoints;
+		_attackDamage = rhs._attackDamage;
+	}
+	return *this;
 }
 
 void	ClapTrap::attack(const std::string &target) {
